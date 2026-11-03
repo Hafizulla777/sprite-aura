@@ -6,7 +6,7 @@ import { REDUCED_MOTION } from '../store'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function CTA() {
+export default function CTA({ onPreorder }: { onPreorder: () => void }) {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function CTA() {
         <p className="lede" data-reveal>
           Reserve your AURA ONE today. No charge until it ships — cancel anytime.
         </p>
-        <button className="btn btn-primary" data-reveal data-cursor data-sound="chime">
+        <button className="btn btn-primary" data-reveal data-cursor data-sound="chime" onClick={onPreorder}>
           Pre-order — {PRICE} <span className="arrow">→</span>
         </button>
         <p className="fine" data-reveal>Free 2-day shipping · 30-night home trial · 2-year warranty</p>

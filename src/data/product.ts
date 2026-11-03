@@ -1,7 +1,28 @@
 export const COLORS = [
-  { key: 'midnight', label: 'Midnight', hex: '#191c22', accent: '#8ab4ff', blurb: 'Anodized graphite shell · icy blue accents' },
-  { key: 'pearl', label: 'Pearl', hex: '#e9e5dd', accent: '#c8a86b', blurb: 'Ceramic-white finish · warm champagne accents' },
-  { key: 'volt', label: 'Volt', hex: '#c9f24d', accent: '#1d2210', blurb: 'High-visibility lime · stealth black accents' },
+  {
+    key: 'midnight',
+    label: 'Midnight',
+    hex: '#191c22',
+    accent: '#8ab4ff',
+    blurb: 'Anodized graphite shell · icy blue accents',
+    image: '/product/aura-one-midnight.jpg',
+  },
+  {
+    key: 'pearl',
+    label: 'Pearl',
+    hex: '#e9e5dd',
+    accent: '#c8a86b',
+    blurb: 'Ceramic-white finish · warm champagne accents',
+    image: '/product/aura-one-pearl.jpg',
+  },
+  {
+    key: 'volt',
+    label: 'Volt',
+    hex: '#c9f24d',
+    accent: '#1d2210',
+    blurb: 'High-visibility lime · stealth black accents',
+    image: '/product/aura-one-volt.jpg',
+  },
 ] as const
 
 export const FEATURES = [

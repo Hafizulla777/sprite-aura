@@ -5,11 +5,12 @@ import { PRICE } from '../data/product'
 const LINKS = [
   { href: '#top', label: 'Overview' },
   { href: '#features', label: 'Features' },
+  { href: '#anatomy', label: 'Inside' },
   { href: '#specs', label: 'Specs' },
   { href: '#colors', label: 'Colors' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ onPreorder }: { onPreorder: () => void }) {
   const [scrolled, setScrolled] = useState(false)
   const [muted, setMuted] = useState(sound.muted)
 
@@ -66,9 +67,9 @@ export default function Navbar() {
             </svg>
           )}
         </button>
-        <a href="#cta" className="btn btn-primary" data-cursor data-sound="chime" onClick={(e) => go(e, '#cta')}>
+        <button className="btn btn-primary" data-cursor data-sound="chime" onClick={onPreorder}>
           Pre-order {PRICE}
-        </a>
+        </button>
       </div>
     </header>
   )

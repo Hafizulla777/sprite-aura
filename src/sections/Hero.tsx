@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { PRICE } from '../data/product'
 import { REDUCED_MOTION } from '../store'
 
-export default function Hero({ ready }: { ready: boolean }) {
+export default function Hero({ ready, onPreorder }: { ready: boolean; onPreorder: () => void }) {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -45,11 +45,11 @@ export default function Hero({ ready }: { ready: boolean }) {
             audio, 40-hour endurance, silence engineered from the driver up.
           </p>
           <div className="hero-ctas" data-hero>
-            <a href="#cta" className="btn btn-primary" data-cursor data-sound="chime" onClick={(e) => go(e, '#cta')}>
+            <button className="btn btn-primary" data-cursor data-sound="chime" onClick={onPreorder}>
               Pre-order now <span className="arrow">→</span>
-            </a>
-            <a href="#features" className="btn btn-ghost" data-cursor data-sound="whoosh" onClick={(e) => go(e, '#features')}>
-              Explore in 3D
+            </button>
+            <a href="#anatomy" className="btn btn-ghost" data-cursor data-sound="whoosh" onClick={(e) => go(e, '#anatomy')}>
+              Open it up
             </a>
           </div>
           <p className="hero-price" data-hero>

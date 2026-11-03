@@ -8,7 +8,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Colorways() {
   const ref = useRef<HTMLElement>(null)
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(appState.colorIndex)
+
+  /* the finish can also be picked in the pre-order sheet — stay in sync */
+  useEffect(() => appState.subscribe(() => setActive(appState.colorIndex)), [])
 
   useEffect(() => {
     if (!ref.current) return
@@ -29,7 +32,7 @@ export default function Colorways() {
 
   const pick = (i: number) => {
     setActive(i)
-    appState.colorIndex = i
+    appState.setColor(i)
   }
 
   return (

@@ -9,3 +9,5 @@ dist-ssr
 .DS_Store
 npm-debug.log*
 tsconfig.tsbuildinfo
+
+.vercel
